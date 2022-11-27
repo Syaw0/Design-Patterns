@@ -1,68 +1,30 @@
-
-abstract class Transportation{
-  abstract createDelivery():Delivery
-
-  public someOp(){
-    const product = this.createDelivery()
-    console.log("creating this delivery",product.operation())
-  }
-  
+abstract class Transportation {
+  abstract createDelivery():Delivery;
 }
 
-class SeaTransport extends Transportation{
-  createDelivery(): SeaDelivery {
-    console.log('new sea transportation')
-    return new SeaDelivery()
-  }
-}
-
-class RoadTransport extends Transportation{
-  createDelivery(): RoadDelivery {
-    console.log('new road transportation')
-    return new RoadDelivery()
-  }
-}
 
 class AirTransport extends Transportation{
-  createDelivery(): AirDelivery {
+  createDelivery(): Delivery {
     return new AirDelivery()
   }
 }
 
+class RoadTransport extends Transportation{
+  createDelivery(): Delivery {
+    return new RoadDelivery()
+  }
+}
+
+
 
 abstract class Delivery{
-  abstract operation():string
-}
 
-class SeaDelivery extends Delivery{
-  operation(): string {
-    return 'sea delivery'
-  }
-}
-class RoadDelivery extends Delivery{
-  operation(): string {
-    return 'road delivery'
-  }
 }
 
 class AirDelivery extends Delivery{
-  operation(): string {
-    return 'air delivery'
-  }
+
 }
 
+class RoadDelivery extends Delivery{
 
-function client(creator:Transportation){
-  creator.someOp()
 }
-
-
-
-// setTimeout(()=>{
-//   client(new SeaTransport())
-// },1000)
-
-
-// setTimeout(()=>{
-//   client(new RoadTransport())
-// },4000)
