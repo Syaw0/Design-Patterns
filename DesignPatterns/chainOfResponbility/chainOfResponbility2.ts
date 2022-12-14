@@ -16,15 +16,20 @@ abstract class FullAuthentication {
     return handler;
   }
 
-  authorization(information: Information) {
+  authorization(information: Information, operationStatus: any) {
     let result = this.authentication(information);
     if (!result) {
       console.log("error happen during authentication", this.type);
+      operationStatus[this.type] = false;
+    } else {
+      operationStatus[this.type] = true;
     }
+
     if (this.nextHandler) {
-      this.nextHandler.authorization(information);
+      this.nextHandler.authorization(information, operationStatus);
     } else {
       console.log("authentication end!");
+      console.log(operationStatus);
     }
   }
 
@@ -94,7 +99,7 @@ class AuthDemo {
       .setNextHandler(this.faceChecking);
   }
   startAuthentication() {
-    this.idChecking.authorization(this.data);
+    this.idChecking.authorization(this.data, {});
   }
 }
 
@@ -107,5 +112,4 @@ let data: Information = {
 };
 
 let au = new AuthDemo(data);
-
 au.startAuthentication();
