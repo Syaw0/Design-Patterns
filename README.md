@@ -1,4 +1,3 @@
-
 <img  src="https://user-images.githubusercontent.com/78824988/209479936-89539017-cdb3-4b31-82ea-39b25dfd1ef3.png"/>
 <body>
   <center>
@@ -25,5 +24,24 @@ I hope it helps you become a better developer :)
   </p>
   </br></br>
   <h1>Category</h1>
-</body>
+  <p>Patterns commonly split to three section...</p>
+  <ol>
+    <li>Creational</li>
+    <li>Structural</li>
+    <li>Behavioral</li>
+  </ol>
+  <p>lets learn about them !</p>
+  </br>
+  <h3>
+    1. Creational Pattern
+  </h3>
 
+  <h3>
+    2. Structural Pattern
+  </h3>
+
+  <h3>
+    3. Behavioral Pattern
+  </h3>
+
+  </body>
