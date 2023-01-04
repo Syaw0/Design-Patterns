@@ -26,9 +26,10 @@ I hope it helps you become a better developer :)
   <h1>Category</h1>
   <p>Patterns commonly split to three section...</p>
   <ol>
-    <li>Creational</li>
-    <li>Structural</li>
-    <li>Behavioral</li>
+    <a href="#----1-creational-pattern--"><li>Creational</li></a>
+    <a href="#----2-structural-pattern--"><li>Structural</li></a>
+    <a href="#----3-behavioral-pattern--"><li>Behavioral</li></a>
+
   </ol>
   <p>lets learn about them !</p>
   </br>
