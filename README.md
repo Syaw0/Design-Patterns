@@ -14,7 +14,6 @@ Yes, that's what I mean. When you are deeply busy thinking about how you got to 
 What the hell!
 And at this moment, the design patterns come towards us like heavenly angels...
 </p>
-<img src="https://user-images.githubusercontent.com/78824988/209480488-e30c5d6c-9fae-4808-8c21-2bee91c88aea.gif" />
   </center>
   <p>
   no joke, Design patterns help us to solve common problems so that after continuous practice for many common problems of application development, you can implement wonderful and optimal architectures to solve these problems easily!
