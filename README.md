@@ -19,9 +19,9 @@ I hope it helps you become a better developer :)
 # Category
 **Patterns commonly split to three section...**
 
-1. [ **Creational**]("#1-creational-pattern)
-2. [ **Structural**]("#1-structural-pattern")
-3. [ **Behavioral**](#1-behavioral-pattern")
+1. [ **Creational**](#1-creational-pattern)
+2. [ **Structural**](#1-structural-pattern)
+3. [ **Behavioral**](#1-behavioral-pattern)
 
 lets learn about them !
 
