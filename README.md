@@ -25,6 +25,8 @@ I hope it helps you become a better developer :)
 
 lets learn about them !
 
+</br>
+
 ## 1. Creational Pattern
 
 
