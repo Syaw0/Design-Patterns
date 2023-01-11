@@ -20,11 +20,9 @@ I hope it helps you become a better developer :)
 
 **Patterns commonly split to three section...**
 
-- [Intent](#intent)
-- [Category](#category)
-  - [1. Creational Pattern](#1-creational-pattern)
-  - [2. Structural Pattern](#2-structural-pattern)
-  - [3. Behavioral Pattern](#3-behavioral-pattern)
+1. [Creational Pattern](#1-creational-pattern)
+2. [Structural Pattern](#2-structural-pattern)
+3. [Behavioral Pattern](#3-behavioral-pattern)
 
 lets learn about them !
 
@@ -50,3 +48,15 @@ lets learn about them !
 - [**Proxy**]()
 
 ## 3. Behavioral Pattern
+
+- [**Chain Of Responsibility**]()
+- [**Command(Action,Transacion)**]()
+- [**Iterator**]()
+- [**Mediator(Intermediary,Controller)**]()
+- [**Memento(Snapshot)**]()
+- [**Observer(Listener,Event-subscriber)**]()
+- [**State**]()
+- [**Strategy**]()
+- [**Template**]()
+- [**Visitor**]()
+
