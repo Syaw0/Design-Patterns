@@ -1,5 +1,16 @@
+// * The most useful pattern when we want share a steps of algorithm
+// * then modify a some steps in subclasses ...
+
+
 abstract class MineData {
-  mine() {}
+  mine(source:string) {
+    this.openFile(source)
+    this.extractData('')
+    this.parseData('')
+    this.analyzeData('')
+    this.sendReport('')
+    this.closeFile('')
+  }
   // the steps to perform mining on file
   openFile(path: string) {}
   extractData(file: string) {}
@@ -27,4 +38,4 @@ class PdfMining extends MineData {
   sendReport(analyze: string): void {}
 }
 
-//TODO define more detail and test code!
+
