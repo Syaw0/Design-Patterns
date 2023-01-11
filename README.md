@@ -40,4 +40,13 @@ lets learn about them !
 
 ## 2. Structural Pattern
 
+- [**Adaptart**]()
+- [**Bridge**]()
+- [**Object Tree(Coposition)**]()
+- [**Decorator**]()
+- [**Facade**]()
+- [**Fly Weight(Cache)**]()
+- [**Facade**]()
+- [**Proxy**]()
+
 ## 3. Behavioral Pattern
