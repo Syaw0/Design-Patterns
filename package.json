@@ -1,18 +1,19 @@
 {
-  "name": "dp_ts",
+  "name": "design-patterns",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-  },
+  "description": "most useful design patterns in most use language",
   "repository": {
     "type": "git",
     "url": "git@syaw0.github.com:Syaw0/DP_ts.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "typescript": "^4.9.3"
-  }
+  "keywords": [
+    "design-patterns",
+    "patterns",
+    "pattern",
+    "oop",
+    "design-pattern",
+    "software-engineering"
+  ],
+  "author": "syaw0",
+  "license": "ISC"
 }
