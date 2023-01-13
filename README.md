@@ -51,7 +51,7 @@ lets learn about them !
 
  <br/>
 
-- [**Adaptart**](https://github.com/Syaw0/Design-Patterns/tree/master/src/Structural_Patterns/Adapter)
+- [**Adapter**](https://github.com/Syaw0/Design-Patterns/tree/master/src/Structural_Patterns/Adapter)
 - [**Bridge**](https://github.com/Syaw0/Design-Patterns/tree/master/src/Structural_Patterns/Bridge)
 - [**Composite(Object Tree)**](https://github.com/Syaw0/Design-Patterns/tree/master/src/Structural_Patterns/Composite)
 - [**Decorator**](https://github.com/Syaw0/Design-Patterns/tree/master/src/Structural_Patterns/Decorator)
