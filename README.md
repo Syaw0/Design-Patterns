@@ -31,7 +31,7 @@ lets learn about them !
 
 
 ## 1. Creational Pattern
-**Creational patterns focus on separating the system of creating objects from the main logical system, in this case the construction and matters related to the creation of new objects become very flexible. These patterns provide different mechanisms for creating objects and allow Reuse the existing code!**
+**Creational patterns focus on separating the system of creating objects from the main logical system, in this case the construction and matters related to the creation of new objects become very flexible. These patterns provide different mechanisms for creating objects and allow Reuse the existing code.**
 
 
 <br/>
@@ -65,7 +65,7 @@ lets learn about them !
 
 ## 3. Behavioral Pattern
 
-**Behavior patterns simply is  to create and control the connection between objects and also how we interact with this objects**
+**Behavior patterns simply is  to create and control the connection between objects and also how we interact with this objects.**
 
 - [**Chain Of Responsibility**](https://github.com/Syaw0/Design-Patterns/tree/master/src/Behavioral_Patterns/Chain_Of_Responsibility)
 - [**Command(Action,Transaction)**](https://github.com/Syaw0/Design-Patterns/tree/master/src/Behavioral_Patterns/Command)
