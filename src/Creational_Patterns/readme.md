@@ -1,4 +1,5 @@
 
+
 # Creational Patterns
 
 
@@ -7,21 +8,39 @@
 <br/>
 
 **Let's learn some tips about these patterns**
+
 <br/>
 
-‍‍1.  **Factory Method**	
+###  1. Factory Method
 *explanation*
+
 <br/>
-2.  **Abstract Factory**
+
+###  2. Abstract Factory
+
 *explanation*
+
 <br/>
-2.  **Builder**
+
+###  3. Builder
+
+
 *explanation*
+
 <br/>
-2. **Prototype**
+
+###  4. Prototype
+
+
 *explanation*
+
 <br/>
-2.  **Singleton**
+
+###  5. Singleton
+
+
 *explanation*
+
 <br/>
+
 
