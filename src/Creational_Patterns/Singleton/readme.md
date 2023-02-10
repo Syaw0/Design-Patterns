@@ -33,6 +33,6 @@ fo === bar // True
 
 ### Examples
 
-[python]('https://github.com/Syaw0/Design-Patterns/blob/master/src/Creational_Patterns/Singleton/examples/python/singleton.py')
+[python](https://github.com/Syaw0/Design-Patterns/blob/master/src/Creational_Patterns/Singleton/examples/python/singleton.py)
 
-[typescript]('https://github.com/Syaw0/Design-Patterns/blob/master/src/Creational_Patterns/Singleton/examples/typescript/singleton.ts')
+[typescript](https://github.com/Syaw0/Design-Patterns/blob/master/src/Creational_Patterns/Singleton/examples/typescript/singleton.ts)
