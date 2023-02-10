@@ -12,7 +12,7 @@ but there is some case that you need to share a variable or state across your ap
 we need to freeze constructor and use an static method to check if instance was created or not!
 if its created before just return it else create new one and return it.
 
-```pseudocode
+```typescript
 class GlobalStates is
   private static field instance: GlobalStates
 
