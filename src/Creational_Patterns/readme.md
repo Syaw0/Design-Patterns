@@ -45,7 +45,7 @@ need to know its creation details.
 
 <br/>
 
-###  4. Prototype
+###  4. [Prototype](https://github.com/Syaw0/Design-Patterns/tree/master/src/Creational_Patterns/Prototype)
 
 
 The Prototype pattern creates
