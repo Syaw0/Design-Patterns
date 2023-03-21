@@ -31,6 +31,10 @@ fo === bar // True
 
 ```
 
+
+In this simplified example , the Singleton class has a private static variable named ` instance `to hold the single instance of the class . The constructor of the class is made private to prevent direct instantiation of the class from outside . Instead , a public static method ` getInstance ( ) ` is provided to create and return the single instance of the class if it doesn't exist , or simply return the existing instance if it does .
+
+
 ### Examples
 
 [python](https://github.com/Syaw0/Design-Patterns/blob/master/src/Creational_Patterns/Singleton/examples/python/singleton.py)
