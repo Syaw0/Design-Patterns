@@ -35,14 +35,23 @@ concrete classes.
 ###  3. Builder
 
 
-*explanation*
+The Builder pattern is a
+design pattern that defines a
+step-by-step process for creating
+complex objects, allowing the
+client to specify the type and
+content of the object without the
+need to know its creation details.
 
 <br/>
 
 ###  4. Prototype
 
 
-*explanation*
+The Prototype pattern creates
+new objects by copying existing
+objects without knowing their
+specific classes.
 
 <br/>
 
