@@ -11,7 +11,7 @@
 
 <br/>
 
-###  1. Factory Method
+###  1. [Factory Method](https://github.com/Syaw0/Design-Patterns/tree/master/src/Creational_Patterns/Factory_Method)
 
 
 The Factory Method pattern
@@ -22,7 +22,7 @@ an object.
 
 <br/>
 
-###  2. Abstract Factory
+###  2. [Abstract Factory](https://github.com/Syaw0/Design-Patterns/tree/master/src/Creational_Patterns/Abstract_Factory)
 
 The Abstract Factory pattern
 provides an interface for creating
@@ -32,7 +32,7 @@ concrete classes.
 
 <br/>
 
-###  3. Builder
+###  3. [Builder](https://github.com/Syaw0/Design-Patterns/tree/master/src/Creational_Patterns/Builder)
 
 
 The Builder pattern is a
