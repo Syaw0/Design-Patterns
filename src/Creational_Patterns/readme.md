@@ -24,7 +24,11 @@ an object.
 
 ###  2. Abstract Factory
 
-*explanation*
+The Abstract Factory pattern
+provides an interface for creating
+families of related or dependent
+objects without specifying their
+concrete classes.
 
 <br/>
 
