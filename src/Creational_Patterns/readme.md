@@ -38,8 +38,7 @@
 
 ###  5. Singleton
 
-
-*explanation*
+The Singleton pattern is a design pattern that ensures the existence of a single instance of a class , and provides a global point of access to that instance throughout the application .
 
 <br/>
 
