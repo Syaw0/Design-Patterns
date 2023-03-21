@@ -6,14 +6,58 @@
 
 # Intent
 
-Have you ever looked at yourself when you are deeply engaged in a heavy project?
-Yes, that's what I mean. When you are deeply busy thinking about how you got to a bug or when you want to add a new feature to the program, you spend long hours adding codes and removing and connecting different parts.
-What the hell!
-And at this moment, the design patterns come towards us like heavenly angels...
-no joke, Design patterns help us to solve common problems so that after continuous practice for many common problems of application development, you can implement wonderful and optimal architectures to solve these problems easily!
-</br>
-Design Patterns saved my ass, so I decided to share my knowledge and others on this repo.
-I hope it helps you become a better developer :)
+
+
+
+In software development, a
+design pattern is a general
+reusable solution that has
+been proven to be effective in
+solving a common problem or
+addressing a recurring design
+challenge. A design pattern
+describes the problem, its
+solution, and its associated
+trade-offs.
+
+Design patterns are useful in
+software development because
+they provide a common language
+and framework for developers
+to communicate and share
+ideas. They allow developers
+to build on the experience and
+knowledge of other developers
+who have faced similar design
+challenges, and to avoid making
+common mistakes. By following
+design patterns, developers can
+write code that is more reliable,
+maintainable, and scalable.
+
+
+Using design patterns can
+also help improve the quality
+and efficiency of software
+development by reducing the
+time and cost required for
+designing and developing new
+systems. Design patterns can
+also improve code clarity and
+readability, making it easier for
+other developers to understand
+and maintain the code.
+Overall, design patterns are
+an important tool for software
+developers in designing and
+building software systems that
+are robust, maintainable, and
+scalable.
+
+
+
+
+
 
 </br>
 
