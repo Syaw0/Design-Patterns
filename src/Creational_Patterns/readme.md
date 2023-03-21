@@ -55,7 +55,7 @@ specific classes.
 
 <br/>
 
-###  5. Singleton
+###  5. [Singleton](https://github.com/Syaw0/Design-Patterns/tree/master/src/Creational_Patterns/Singleton)
 
 The Singleton pattern is a design pattern that ensures the existence of a single instance of a class , and provides a global point of access to that instance throughout the application .
 
