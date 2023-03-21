@@ -12,7 +12,13 @@
 <br/>
 
 ###  1. Factory Method
-*explanation*
+
+
+The Factory Method pattern
+allows subclasses to decide
+which class to instantiate by
+defining an interface for creating
+an object.
 
 <br/>
 
