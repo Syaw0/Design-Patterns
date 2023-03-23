@@ -36,7 +36,7 @@ The Bridge pattern decouples an abstraction from its implementation to allow the
 ###  4. Decorator
 
 
-*explanation*
+The Decorator pattern adds behavior or functionality to an object dynamically without affecting its original behavior .
 
 <br/>
 
