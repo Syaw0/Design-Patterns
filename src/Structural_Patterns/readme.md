@@ -29,7 +29,7 @@ The Bridge pattern decouples an abstraction from its implementation to allow the
 ###  3. Composite(Object Tree)
 
 
-*explanation*
+The Composite pattern allows you to compose objects into tree structures to represent part - whole hierarchies .
 
 <br/>
 
