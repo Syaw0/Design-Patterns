@@ -1,4 +1,6 @@
 
+
+
 # Structural Patterns
 
 
@@ -37,8 +39,7 @@
 
 ###  5. Facade
 
-
-*explanation*
+The Facade pattern provides a simplified interface to a complex system or set of subsystems .
 
 <br/>
 
