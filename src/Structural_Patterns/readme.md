@@ -46,7 +46,9 @@
 ###  6. Flyweight(Cache)
 
 
-*explanation*
+The Flyweight pattern is a memory - efficient way to share data among multiple objects that have similar characteristics .
+
+
 
 <br/>
 
