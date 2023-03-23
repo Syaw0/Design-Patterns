@@ -61,7 +61,7 @@ The Flyweight pattern is a memory - efficient way to share data among multiple o
 ###  7. Proxy
 
 
-*explanation*
+The Proxy pattern provides a surrogate or placeholder for another object to control access to it .
 
 <br/>
 
