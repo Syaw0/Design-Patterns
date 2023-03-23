@@ -10,8 +10,10 @@
 <br/>
 
 ###  1. Chain Of Responsibility
-*explanation*
 
+
+
+The Chain of Responsibility pattern allows you to pass requests along a chain of handlers until one of them can handle it .
 <br/>
 
 ###  2. Command(Action,Transaction)
