@@ -21,7 +21,8 @@ The Adapter pattern allows incompatible classes to work together by converting t
 
 ###  2. Bridge
 
-*explanation*
+The Bridge pattern decouples an abstraction from its implementation to allow them to change independently .
+
 
 <br/>
 
