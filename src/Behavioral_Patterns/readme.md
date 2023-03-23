@@ -18,8 +18,8 @@ The Chain of Responsibility pattern allows you to pass requests along a chain of
 
 ###  2. Command(Action,Transaction)
 
-*explanation*
 
+The Command pattern encapsulates a request as an object , thereby allowing parameterization of clients with different requests , queueing or logging requests , and support for undoable operations .
 <br/>
 
 ###  3. Mediator(Intermediary,Controller)
