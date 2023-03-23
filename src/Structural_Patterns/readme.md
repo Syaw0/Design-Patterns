@@ -13,7 +13,9 @@
 <br/>
 
 ###  1. Adapter
-*explanation*
+
+
+The Adapter pattern allows incompatible classes to work together by converting the interface of one class to another .
 
 <br/>
 
