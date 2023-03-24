@@ -53,7 +53,7 @@ The State pattern allows an object to change its behavior when its internal stat
 ###  7. Strategy
 
 
-*explanation*
+The Strategy pattern defines a family of interchangeable algorithms and enables them to be used interchangeably within a context object .
 
 <br/>
 
