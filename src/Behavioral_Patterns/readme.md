@@ -43,8 +43,8 @@ The Command pattern encapsulates a request as an object , thereby allowing param
 
 ###  6. State
 
+The State pattern allows an object to change its behavior when its internal state changes .
 
-*explanation*
 
 <br/>
 
