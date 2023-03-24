@@ -21,8 +21,7 @@ The Command pattern encapsulates a request as an object , thereby allowing param
 
 ###  3. Mediator(Intermediary,Controller)
 
-
-*explanation*
+The mediator design pattern allows objects to communicate with each other through a mediator object , reducing the direct dependencies between them .
 
 <br/>
 
