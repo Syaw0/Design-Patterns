@@ -1,11 +1,8 @@
 # Behavioral Patterns
 
 
-**Behavior patterns simply is to create and control the connection between objects and also how we interact with this objects.**
+**Behavioral design pattern is a category of design patterns that deals with the behavior of objects in a system and how they interact with one another . It is concerned with the assignment of responsibilities between objects , ensuring communication between them and helping them work together more effectively . Behavioral design patterns include patterns such as :**
 
-<br/>
-
-**Let's learn some tips about these patterns**
 
 <br/>
 
