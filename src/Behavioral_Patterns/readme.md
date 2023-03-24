@@ -73,7 +73,9 @@ The Template Method pattern defines the skeleton of an algorithm in a base class
 ###  9. Visitor
 
 
-*explanation*
+The Visitor pattern allows for the separation of an algorithm ( visitor ) from the object structure it operates on by adding a visitor interface to each element of the object structure .
+
+
 
 <br/>
 
