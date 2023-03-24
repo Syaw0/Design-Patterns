@@ -62,8 +62,7 @@ The Strategy pattern defines a family of interchangeable algorithms and enables 
 
 ###  8. Template
 
-
-*explanation*
+The Template Method pattern defines the skeleton of an algorithm in a base class and allows subclasses to fill in the details without changing the overall algorithm .
 
 <br/>
 
