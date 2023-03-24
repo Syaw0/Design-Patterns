@@ -29,7 +29,7 @@ The Command pattern encapsulates a request as an object , thereby allowing param
 ###  4. Memento(Snapshot)
 
 
-*explanation*
+The Memento pattern provides the ability to capture and restore an object's internal state without violating encapsulation .
 
 <br/>
 
