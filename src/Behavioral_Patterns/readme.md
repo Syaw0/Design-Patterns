@@ -36,7 +36,8 @@ The Command pattern encapsulates a request as an object , thereby allowing param
 ###  5. Observer(Listener,Event-subscriber)
 
 
-*explanation*
+
+The Observer pattern allows one object to notify other objects automatically when it changes its state , so that they can update themselves accordingly .
 
 <br/>
 
