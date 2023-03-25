@@ -63,3 +63,76 @@ In this example, we have a `RealSubject` class that represents the actual object
 The `Proxy` class also implements the same interface as the `RealSubject` class, and it provides additional functionality such as checking access before firing a real request and logging the time of request.
 
 When we create a `Proxy` object, we pass in the `RealSubject` object as a parameter. We then call the `request` method on the `Proxy` object, and the `Proxy` object handles the request by first checking access and logging the time of request, and then passing the request on to the `RealSubject` object.
+
+
+
+
+### UseCase
+
+
+Sure, here's a pseudocode for a real-life example of the proxy design pattern:
+
+```javascript
+// Define a Subject interface
+interface BankAccount {
+  withdraw(amount: number): void;
+  getBalance(): number;
+}
+
+// Define a RealSubject class that implements the Subject interface
+class RealBankAccount implements BankAccount {
+  private balance: number;
+
+  constructor(initialBalance: number) {
+    this.balance = initialBalance;
+  }
+
+  withdraw(amount: number): void {
+    if (amount > this.balance) {
+      console.log('Error: Withdrawal amount exceeds balance');
+      return;
+    }
+
+    this.balance -= amount;
+    console.log(`Withdrawal successful. Balance: ${this.balance}`);
+  }
+
+  getBalance(): number {
+    return this.balance;
+  }
+}
+
+// Define a Proxy class that also implements the Subject interface
+class BankAccountProxy implements BankAccount {
+  private realBankAccount: RealBankAccount;
+
+  constructor(initialBalance: number) {
+    this.realBankAccount = new RealBankAccount(initialBalance);
+  }
+
+  withdraw(amount: number): void {
+    if (this.checkAccess()) {
+      this.realBankAccount.withdraw(amount);
+    }
+  }
+
+  getBalance(): number {
+    return this.realBankAccount.getBalance();
+  }
+
+  checkAccess(): boolean {
+    // Perform authentication and authorization checks here
+    // Return true if authorized, false if not authorized
+  }
+}
+
+// Usage:
+let bankAccount = new BankAccountProxy(1000);
+bankAccount.withdraw(500); // Withdrawal successful. Balance: 500.
+```
+
+In this example, we have a `BankAccount` interface that defines the methods that a bank account can have. We then have a `RealBankAccount` class that implements the `BankAccount` interface and actually does the work of withdrawing money and returning the balance.
+
+We also have a `BankAccountProxy` class that also implements the `BankAccount` interface. This proxy class acts as a gatekeeper for the real bank account object. When a user requests to withdraw money, the proxy checks access to see if the user is authorized to withdraw money. If access is granted, the proxy then passes the request on to the real bank account object.
+
+When the user interacts with our `BankAccountProxy`, they can withdraw money or get their balance as normal. However, behind the scenes, our proxy is performing additional authentication and authorization checks before actually performing any transactions. This helps to ensure that only authorized users can interact with the bank account, and that their transactions are secure.
