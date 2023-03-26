@@ -8,3 +8,56 @@ For example, let's say you have a game with different types of enemies, such as 
 
 
 ### How Its Work
+
+
+```javascript
+// Define the Visitor interface
+class Visitor {
+  visitLion(lion) {
+    lion.roar();
+  }
+  visitElephant(elephant) {
+    elephant.trumpet();
+  }
+}
+
+// Define the Animal hierarchy
+class Animal {
+  accept(visitor) {
+    // This method will be overridden by each Animal subclass
+  }
+}
+
+class Lion extends Animal {
+  roar() {
+    console.log("The lion roars!");
+  }
+  accept(visitor) {
+    visitor.visitLion(this);
+  }
+}
+
+class Elephant extends Animal {
+  trumpet() {
+    console.log("The elephant trumpets!");
+  }
+  accept(visitor) {
+    visitor.visitElephant(this);
+  }
+}
+
+// Usage
+const lion = new Lion();
+const elephant = new Elephant();
+const visitor = new Visitor();
+
+lion.accept(visitor); // Output: The lion roars!
+elephant.accept(visitor); // Output: The elephant trumpets!
+```
+
+In this example, we define an Animal hierarchy with two subclasses, Lion and Elephant. We also define a Visitor interface with two methods, `visitLion` and `visitElephant`, which are implemented by the Visitor subclass. Each Animal subclass overrides the `accept` method to call the appropriate Visitor method based on its type. Finally, we create instances of the Lion and Elephant classes and pass them to the Visitor object, which calls the appropriate methods based on the type of the Animal.
+
+
+
+### Use Case
+
