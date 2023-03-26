@@ -12,50 +12,80 @@ For example, let's say you have a game with different types of enemies, such as 
 
 ```javascript
 // Define the Visitor interface
-class Visitor {
-  visitLion(lion) {
-    lion.roar();
-  }
-  visitElephant(elephant) {
-    elephant.trumpet();
-  }
+interface Visitor {
+    visit(element: Element)
 }
 
-// Define the Animal hierarchy
-class Animal {
-  accept(visitor) {
-    // This method will be overridden by each Animal subclass
-  }
+// Define the Concrete Visitor implementations
+class ConcreteVisitor1 implements Visitor {
+    visit(element: Element) {
+        // Implement the logic for visiting Element with ConcreteVisitor1
+    }
 }
 
-class Lion extends Animal {
-  roar() {
-    console.log("The lion roars!");
-  }
-  accept(visitor) {
-    visitor.visitLion(this);
-  }
+class ConcreteVisitor2 implements Visitor {
+    visit(element: Element) {
+        // Implement the logic for visiting Element with ConcreteVisitor2
+    }
 }
 
-class Elephant extends Animal {
-  trumpet() {
-    console.log("The elephant trumpets!");
-  }
-  accept(visitor) {
-    visitor.visitElephant(this);
-  }
+// Define the Element interface
+interface Element {
+    accept(visitor: Visitor)
 }
 
-// Usage
-const lion = new Lion();
-const elephant = new Elephant();
-const visitor = new Visitor();
+// Define the Concrete Element implementations
+class ConcreteElement1 implements Element {
+    accept(visitor: Visitor) {
+        visitor.visit(this)
+    }
+}
 
-lion.accept(visitor); // Output: The lion roars!
-elephant.accept(visitor); // Output: The elephant trumpets!
+class ConcreteElement2 implements Element {
+    accept(visitor: Visitor) {
+        visitor.visit(this)
+    }
+}
+
+// Define the Object Structure
+class ObjectStructure {
+    private elements: Element[]
+
+    addElement(element: Element) {
+        elements.push(element)
+    }
+
+    removeElement(element: Element) {
+        // Remove the element from the elements array
+    }
+
+    accept(visitor: Visitor) {
+        for (element in elements) {
+            element.accept(visitor)
+        }
+    }
+}
+
+// Usage example
+objectStructure = new ObjectStructure()
+objectStructure.addElement(new ConcreteElement1())
+objectStructure.addElement(new ConcreteElement2())
+
+visitor1 = new ConcreteVisitor1()
+visitor2 = new ConcreteVisitor2()
+
+objectStructure.accept(visitor1)
+objectStructure.accept(visitor2)
 ```
 
-In this example, we define an Animal hierarchy with two subclasses, Lion and Elephant. We also define a Visitor interface with two methods, `visitLion` and `visitElephant`, which are implemented by the Visitor subclass. Each Animal subclass overrides the `accept` method to call the appropriate Visitor method based on its type. Finally, we create instances of the Lion and Elephant classes and pass them to the Visitor object, which calls the appropriate methods based on the type of the Animal.
+In this example, we have defined the Visitor interface and two ConcreteVisitor implementations that define the logic for visiting elements. We have also defined the Element interface and two ConcreteElement implementations that define the accept() method to accept a visitor. 
+
+We have then defined an ObjectStructure class that contains an array of elements and implements an accept() method that calls the accept() method of each element in the array with the given visitor.
+
+Finally, we have created an instance of the ObjectStructure class and added two elements to it, then created two visitors and called the accept() method of the object structure with each visitor. This will cause each element in the object structure to accept each visitor in turn, and the appropriate visit() method will be called for each element-visitor pair.
+
+
+
 
 
 
