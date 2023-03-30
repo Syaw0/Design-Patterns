@@ -70,3 +70,117 @@ In the usage example, we create a new Context object with an initial state of Co
 
 
 
+
+
+
+### Use Case
+
+
+Let's say we have a traffic light system that has three states: "red", "yellow", and "green". Each state represents a different behavior of the traffic light, such as "stop" for red, "slow down" for yellow, and "go" for green.
+
+We can use the state design pattern to represent each state as an object with a common interface, and switch between the states as needed. Here's an example implementation:
+
+```javascript
+// Define the TrafficLight class
+class TrafficLight {
+  constructor() {
+    // Set initial state to "red"
+    this.currentState = new RedState(this);
+  }
+
+  // This method is called to switch to the next state
+  nextState() {
+    this.currentState.nextState();
+  }
+
+  // This method is called to get the current state name
+  getState() {
+    return this.currentState.constructor.name;
+  }
+
+  // This method is called to display the current state behavior
+  display() {
+    this.currentState.display();
+  }
+}
+
+// Define the RedState class
+class RedState {
+  constructor(light) {
+    this.light = light;
+  }
+
+  // This method is called to switch to the next state
+  nextState() {
+    this.light.currentState = new YellowState(this.light);
+  }
+
+  // This method is called to display the current state behavior
+  display() {
+    console.log("Stop!");
+  }
+}
+
+// Define the YellowState class
+class YellowState {
+  constructor(light) {
+    this.light = light;
+  }
+
+  // This method is called to switch to the next state
+  nextState() {
+    this.light.currentState = new GreenState(this.light);
+  }
+
+  // This method is called to display the current state behavior
+  display() {
+    console.log("Slow down!");
+  }
+}
+
+// Define the GreenState class
+class GreenState {
+  constructor(light) {
+    this.light = light;
+  }
+
+  // This method is called to switch to the next state
+  nextState() {
+    this.light.currentState = new RedState(this.light);
+  }
+
+  // This method is called to display the current state behavior
+  display() {
+    console.log("Go!");
+  }
+}
+
+// Example usage:
+const trafficLight = new TrafficLight();
+
+trafficLight.display(); // "Stop!"
+console.log(trafficLight.getState()); // "RedState"
+
+trafficLight.nextState();
+trafficLight.display(); // "Slow down!"
+console.log(trafficLight.getState()); // "YellowState"
+
+trafficLight.nextState();
+trafficLight.display(); // "Go!"
+console.log(trafficLight.getState()); // "GreenState"
+
+trafficLight.nextState();
+trafficLight.display(); // "Stop!"
+console.log(trafficLight.getState()); // "RedState"
+```
+
+In this example, we create a TrafficLight class that holds the current state of the traffic light. The initial state is "red", and calling the `nextState()` method switches to the next state in the sequence "red" -> "yellow" -> "green" -> "red". 
+
+Each state is represented by a separate class that implements the same interface, with a `nextState()` method to switch to the next state and a `display()` method to show the behavior of the traffic light in that state. 
+
+By using the state design pattern, we can easily add new states or modify existing ones without having to change the entire TrafficLight class. We can also avoid large if-else or switch statements that would be required without this pattern.
+
+
+
+
+
