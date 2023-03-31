@@ -66,3 +66,90 @@ In this example, we have a `Mediator` object that keeps track of all `Colleague`
 
 
 
+
+### Use Case
+
+
+Sure, here's another example of how the mediator pattern can be used in JavaScript:
+
+Suppose you are building a chat application where users can send messages to each other. When a user sends a message, you want to make sure that the message is delivered to the correct recipient(s) without the sender having to know anything about the recipient(s). You can use the mediator pattern to achieve this.
+
+Here's a code example that demonstrates this pattern:
+
+```javascript
+// Mediator object
+const chatMediator = {
+  users: {},
+
+  // Add a user to the list of users
+  addUser(user) {
+    this.users[user.name] = user;
+  },
+
+  // Send a message from a sender to a recipient
+  sendMessage(senderName, recipientName, message) {
+    const recipient = this.users[recipientName];
+    if (recipient) {
+      recipient.receiveMessage(senderName, message);
+    } else {
+      console.log(`Recipient ${recipientName} not found`);
+    }
+  }
+};
+
+// User object
+class User {
+  constructor(name) {
+    this.name = name;
+    chatMediator.addUser(this);
+  }
+
+  // Send a message to a recipient
+  sendMessage(recipientName, message) {
+    chatMediator.sendMessage(this.name, recipientName, message);
+  }
+
+  // Receive a message from a sender
+  receiveMessage(senderName, message) {
+    console.log(`${this.name} received message from ${senderName}: ${message}`);
+  }
+}
+
+// Create two users
+const user1 = new User('Alice');
+const user2 = new User('Bob');
+
+// User 1 sends a message to user 2
+user1.sendMessage('Bob', 'Hello from Alice!');
+
+// User 2 sends a message to user 1
+user2.sendMessage('Alice', 'Hi Alice, nice to meet you!');
+```
+
+In this example, the `chatMediator` object acts as a central hub for communication between the `User` objects. The `addUser` method adds a user to the list of users that the `chatMediator` manages, while the `sendMessage` method sends a message from a sender to a recipient.
+
+Each `User` object has a `sendMessage` method that it can use to send messages to other users through the `chatMediator`. When a user receives a message, it logs the message to the console.
+
+
+
+Note that, in this example, the `User` objects don't know anything about each other - they only interact with the `chatMediator`. This allows for a more decoupled design, where users can be added or removed without affecting the rest of the system. The `chatMediator` acts as a single point of contact between the `User` objects, and can manage the communication between them in a more organized and centralized way.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
