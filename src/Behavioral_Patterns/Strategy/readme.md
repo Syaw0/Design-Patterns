@@ -74,3 +74,75 @@ organizedToys = organizeToys(toys, strategy);
 // organizedToys now contains the toys sorted by type
 ```
 
+
+### Use Case
+
+
+Here's an example of how the strategy pattern could be implemented in JavaScript for a payment processing system:
+
+
+```javascript
+
+// Define the PaymentStrategy interface
+class PaymentStrategy {
+  processPayment() {}
+}
+
+// Define the CreditCardPaymentStrategy
+class CreditCardPaymentStrategy extends PaymentStrategy {
+  processPayment() {
+    // Implement credit card payment logic
+  }
+}
+
+// Define the PayPalPaymentStrategy
+class PayPalPaymentStrategy extends PaymentStrategy {
+  processPayment() {
+    // Implement PayPal payment logic
+  }
+}
+
+// Define the ApplePayPaymentStrategy
+class ApplePayPaymentStrategy extends PaymentStrategy {
+  processPayment() {
+    // Implement Apple Pay payment logic
+  }
+}
+
+// Define the PaymentProcessor class
+class PaymentProcessor {
+  constructor(paymentStrategy) {
+    this.paymentStrategy = paymentStrategy;
+  }
+
+  processPayment() {
+    this.paymentStrategy.processPayment();
+  }
+}
+
+// Example usage
+const creditCardPayment = new CreditCardPaymentStrategy();
+const paymentProcessor = new PaymentProcessor(creditCardPayment);
+paymentProcessor.processPayment();
+
+const payPalPayment = new PayPalPaymentStrategy();
+paymentProcessor.paymentStrategy = payPalPayment;
+paymentProcessor.processPayment(); 
+
+```
+
+In this example, we define the PaymentStrategy interface and three concrete implementations for credit card, PayPal, and Apple Pay payments. We also define a PaymentProcessor class that takes a payment strategy as a parameter and uses it to process the payment.
+
+We can then create instances of each payment strategy and pass them to the PaymentProcessor to dynamically choose which payment method to use.
+
+
+
+
+
+
+
+
+
+
+
+
