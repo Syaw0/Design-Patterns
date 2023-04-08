@@ -76,3 +76,82 @@ handlerA.handleRequest(request);
 
 
 
+
+### Use Case 
+
+
+```javascript
+// Define the base class for handling purchase requests
+class PurchaseHandler {
+  constructor(name, amount) {
+    this.name = name;
+    this.amount = amount;
+  }
+
+  setNext(handler) {
+    this.nextHandler = handler;
+    return handler;
+  }
+
+  handleRequest() {
+    if (this.nextHandler) {
+      return this.nextHandler.handleRequest();
+    }
+    return null;
+  }
+}
+
+// Create concrete classes for handling specific types of purchase requests
+class Manager extends PurchaseHandler {
+  handleRequest() {
+    if (this.amount <= 1000) {
+      console.log(`${this.name} approved the purchase of $${this.amount}`);
+    } else {
+      super.handleRequest();
+    }
+  }
+}
+
+class Director extends PurchaseHandler {
+  handleRequest() {
+    if (this.amount <= 5000) {
+      console.log(`${this.name} approved the purchase of $${this.amount}`);
+    } else {
+      super.handleRequest();
+    }
+  }
+}
+
+class CEO extends PurchaseHandler {
+  handleRequest() {
+    if (this.amount <= 10000) {
+      console.log(`${this.name} approved the purchase of $${this.amount}`);
+    } else {
+      console.log(`Purchase request of $${this.amount} exceeds the company's spending limit`);
+    }
+  }
+}
+
+// Set up the chain of responsibility by linking the handlers together
+const manager = new Manager('John', 800);
+const director = new Director('Jane', 3000);
+const ceo = new CEO('Bob', 15000);
+manager.setNext(director).setNext(ceo);
+
+// Send purchase requests down the chain
+const request1 = new PurchaseHandler('Laptop', 500);
+manager.handleRequest(request1); // Output: John approved the purchase of $500
+
+const request2 = new PurchaseHandler('Office Furniture', 8000);
+manager.handleRequest(request2); // Output: Purchase request of $8000 exceeds the company's spending limit
+
+```
+
+
+
+
+
+
+
+
+
