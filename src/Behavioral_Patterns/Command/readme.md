@@ -30,7 +30,7 @@ The command design pattern is useful because it allows you to separate the code 
 
 ### How Its Work
 
-```
+```javascript
 // Define the Command interface
 class Command {
   execute() {}
