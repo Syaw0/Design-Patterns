@@ -9,6 +9,76 @@ For example, if you ask the abstract factory to make a toy car, it will follow t
 This way, you can make different types of toys without having to create new instructions each time. The abstract factory takes care of all the details for you.
 
 
+### How Its Work
+
+
+```javascript
+// Abstract Factory
+class ToyFactory {
+  createToy() {}
+}
+
+// Concrete Factory 1
+class CarFactory extends ToyFactory {
+  createToy() {
+    return new ToyCar();
+  }
+}
+
+// Concrete Factory 2
+class PlaneFactory extends ToyFactory {
+  createToy() {
+    return new ToyPlane();
+  }
+}
+
+// Abstract Product
+class Toy {
+  constructor(type) {
+    this.type = type;
+  }
+}
+
+// Concrete Product 1
+class ToyCar extends Toy {
+  constructor() {
+    super("car");
+  }
+}
+
+// Concrete Product 2
+class ToyPlane extends Toy {
+  constructor() {
+    super("plane");
+  }
+}
+
+// Client Code
+const carFactory = new CarFactory();
+const planeFactory = new PlaneFactory();
+
+const car = carFactory.createToy();
+console.log(car.type); // Output: "car"
+
+const plane = planeFactory.createToy();
+console.log(plane.type); // Output: "plane"
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
