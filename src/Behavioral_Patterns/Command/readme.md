@@ -103,6 +103,116 @@ invoker.executeCommands()
 
 
 
+### Use Case
+
+
+One example of Command design pattern in JavaScript is implementing an undo/redo functionality in a text editor. 
+
+The Command pattern suggests encapsulating a request as an object, thereby allowing for the parameterization of clients with different requests, queue or log requests, and support undoable operations. 
+
+Here's a sample code snippet:
+```javascript
+class TextEditor {
+  constructor() {
+    this.text = '';
+    this.history = [];
+    this.cursor = 0;
+  }
+
+  executeCommand(command) {
+    command.execute();
+    this.history.push(command);
+    this.cursor++;
+  }
+
+  undo() {
+    if (this.cursor > 0) {
+      this.cursor--;
+      this.history[this.cursor].undo();
+    }
+  }
+
+  redo() {
+    if (this.cursor < this.history.length) {
+      this.history[this.cursor].execute();
+      this.cursor++;
+    }
+  }
+}
+
+class AddTextCommand {
+  constructor(editor, text) {
+    this.editor = editor;
+    this.text = text;
+  }
+
+  execute() {
+    this.editor.text += this.text;
+  }
+
+  undo() {
+    this.editor.text = this.editor.text.slice(0, -this.text.length);
+  }
+}
+
+class DeleteTextCommand {
+  constructor(editor, length) {
+    this.editor = editor;
+    this.length = length;
+    this.deletedText = '';
+  }
+
+  execute() {
+    this.deletedText = this.editor.text.slice(-this.length);
+    this.editor.text = this.editor.text.slice(0, -this.length);
+  }
+
+  undo() {
+    this.editor.text += this.deletedText;
+  }
+}
+
+const editor = new TextEditor();
+
+editor.executeCommand(new AddTextCommand(editor, 'Hello')); // add 'Hello' to text
+editor.executeCommand(new AddTextCommand(editor, ' World')); // add ' World' to text
+console.log(editor.text); // output: 'Hello World'
+
+editor.executeCommand(new DeleteTextCommand(editor, 6)); // delete ' World' from text
+console.log(editor.text); // output: 'Hello'
+
+editor.undo(); // undo the last command (delete)
+console.log(editor.text); // output: 'Hello World'
+
+editor.redo(); // redo the last command (delete)
+console.log(editor.text); // output: 'Hello'
+
+```
+In this example, the TextEditor class is the receiver that executes commands. The AddTextCommand and DeleteTextCommand classes are concrete commands that encapsulate the request to add or delete text. 
+
+The executeCommand, undo, and redo methods of the TextEditor class implement the command queue and undo/redo functionality. 
+
+By using the Command pattern, we can easily add new commands to the text editor without modifying the TextEditor class. We can also log or queue commands for later execution.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
