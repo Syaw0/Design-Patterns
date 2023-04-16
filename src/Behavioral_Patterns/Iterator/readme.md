@@ -39,6 +39,72 @@ By using the Iterator pattern, we can easily go through each item in a collectio
 
 
 
+### Use Case
+
+
+```javascript
+class Book {
+  constructor(title, author, year) {
+    this.title = title;
+    this.author = author;
+    this.year = year;
+  }
+}
+
+class BookList {
+  constructor() {
+    this.books = [];
+  }
+
+  addBook(book) {
+    this.books.push(book);
+  }
+
+  *[Symbol.iterator]() {
+    for (let book of this.books) {
+      yield book;
+    }
+  }
+}
+
+const myBookList = new BookList();
+myBookList.addBook(new Book("The Great Gatsby", "F. Scott Fitzgerald", 1925));
+myBookList.addBook(new Book("To Kill a Mockingbird", "Harper Lee", 1960));
+myBookList.addBook(new Book("1984", "George Orwell", 1949));
+
+for (let book of myBookList) {
+  console.log(`${book.title} by ${book.author} (${book.year})`);
+}
+
+```
+In this example, the BookList class represents a collection of books. We add books to the list using the addBook method.
+
+The *[Symbol.iterator]() method is what makes BookList iterable. It uses a generator function to yield each book in the list.
+
+We can then use a for...of loop to iterate over the books in the list and log their titles, authors, and years to the console.
+
+This implementation of the Iterator pattern allows us to easily iterate over a collection of books without having to know how the BookList class is implemented internally. It also allows us to reuse the same iteration logic across different collections of objects.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
