@@ -65,6 +65,75 @@ console.log(plane.type); // Output: "plane"
 
 ```
 
+### Use Case
+
+
+A real world example of the abstract factory design pattern is a car manufacturing plant. The plant has different assembly lines for different types of cars, such as sedans, SUVs, and sports cars. Each assembly line is a concrete factory that produces a specific type of car. The abstract factory is the overall car manufacturing plant that manages the different assembly lines and ensures that each car meets the required quality standards. The cars themselves are the concrete products that are created by the assembly lines. By using the abstract factory design pattern, the car manufacturing plant can easily add new types of cars to its production line without disrupting the existing assembly lines or affecting the quality of the cars.
+
+
+```javascript
+
+// Abstract Factory
+class CarFactory {
+  createCar() {}
+}
+
+// Concrete Factories
+class SedanFactory extends CarFactory {
+  createCar() {
+    return new Sedan();
+  }
+}
+
+class SUVFactory extends CarFactory {
+  createCar() {
+    return new SUV();
+  }
+}
+
+class SportsCarFactory extends CarFactory {
+  createCar() {
+    return new SportsCar();
+  }
+}
+
+// Concrete Products
+class Sedan {
+  constructor() {
+    this.type = "Sedan";
+  }
+}
+
+class SUV {
+  constructor() {
+    this.type = "SUV";
+  }
+}
+
+class SportsCar {
+  constructor() {
+    this.type = "Sports Car";
+  }
+}
+
+// Client Code
+const sedanFactory = new SedanFactory();
+const suvFactory = new SUVFactory();
+const sportsCarFactory = new SportsCarFactory();
+
+const sedan = sedanFactory.createCar();
+const suv = suvFactory.createCar();
+const sportsCar = sportsCarFactory.createCar();
+
+console.log(sedan.type); // Sedan
+console.log(suv.type); // SUV
+console.log(sportsCar.type); // Sports Car
+```
+In this example, the abstract factory is represented by the CarFactory class, which has a createCar method that returns a concrete product. The SedanFactory, SUVFactory, and SportsCarFactory are the concrete factories that extend the CarFactory and implement the createCar method to return a specific type of car. The Sedan, SUV, and SportsCar are the concrete products that are created by the respective factories. Finally, the client code creates instances of the concrete factories and uses them to create concrete products.
+
+
+
+
 
 
 
