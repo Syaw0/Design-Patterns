@@ -79,6 +79,103 @@ console.log(veggiePizza);
 In this example, we have three types of pizzas: CheesePizza, PepperoniPizza, and VeggiePizza. Each pizza type is a subclass of the Pizza class, which has a method for adding toppings. The PizzaFactory class has a createPizza method that takes a type argument and returns a new instance of the corresponding pizza type. We can use the PizzaFactory to create different types of pizzas based on user input or other criteria.
 
 
+### Use Case
+
+
+One real-world example of the factory method pattern in JavaScript is a car manufacturer. The manufacturer produces different models of cars, such as sedans, SUVs, and sports cars. Each model has different features and specifications.
+
+The factory method pattern can be used to create a CarFactory class that has methods for creating each type of car. Each method will return an instance of the corresponding car class, such as SedanCar, SUVCar, or SportsCar.
+
+Here's an example code snippet for the factory method pattern in JavaScript:
+```javascript
+class Car {
+  constructor(name, engine, transmission, color) {
+    this.name = name;
+    this.engine = engine;
+    this.transmission = transmission;
+    this.color = color;
+  }
+
+  start() {
+    console.log(`Starting ${this.name} car with ${this.engine} engine and ${this.transmission} transmission in ${this.color} color`);
+  }
+
+  drive() {
+    console.log(`Driving ${this.name} car`);
+  }
+
+  stop() {
+    console.log(`Stopping ${this.name} car`);
+  }
+}
+
+class SedanCar extends Car {
+  constructor(engine, transmission, color) {
+    super("Sedan", engine, transmission, color);
+  }
+}
+
+class SUVCar extends Car {
+  constructor(engine, transmission, color) {
+    super("SUV", engine, transmission, color);
+  }
+}
+
+class SportsCar extends Car {
+  constructor(engine, transmission, color) {
+    super("Sports", engine, transmission, color);
+  }
+}
+
+class CarFactory {
+  createCar(type) {
+    switch (type) {
+      case "Sedan":
+        return new SedanCar("4-cylinder", "automatic", "white");
+      case "SUV":
+        return new SUVCar("6-cylinder", "automatic", "black");
+      case "Sports":
+        return new SportsCar("8-cylinder", "manual", "red");
+      default:
+        throw new Error(`Invalid car type: ${type}`);
+    }
+  }
+}
+
+let carFactory = new CarFactory();
+
+let sedanCar = carFactory.createCar("Sedan");
+let suvCar = carFactory.createCar("SUV");
+let sportsCar = carFactory.createCar("Sports");
+
+sedanCar.start();
+sedanCar.drive();
+sedanCar.stop();
+
+suvCar.start();
+suvCar.drive();
+suvCar.stop();
+
+sportsCar.start();
+sportsCar.drive();
+sportsCar.stop();
+
+```
+In this example, we have three types of cars: Sedan, SUV, and Sports. Each car type is a subclass of the Car class, which has methods for starting, driving, and stopping the car.
+
+The CarFactory class is a concrete factory that implements the factory method interface. It has a createCar method that takes a car type as an argument and returns an instance of the corresponding car class.
+
+We can use the CarFactory to create different types of cars based on customer orders. The factory method pattern allows us to encapsulate the car creation logic in the CarFactory class, making it easier to maintain and modify in the future. Additionally, we can easily add new car types by creating new subclasses of the Car class and updating the CarFactory class to include the new type.
+
+
+
+
+
+
+
+
+
+
 
 
 
