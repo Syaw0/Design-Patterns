@@ -41,6 +41,83 @@ adapter.request(); // Calls the specificRequest method on the Adaptee through th
 ```
 
 
+### Use Case
+
+
+
+One real-world example of the Adapter pattern in JavaScript is when working with different APIs that have different interfaces. For instance, let's say you are building a weather app that retrieves weather data from two different weather APIs: OpenWeatherMap and Weather Underground. These two APIs have different interfaces, so you need to adapt them to a common interface to use them interchangeably in your app.
+
+Here's an example code:
+```javascript
+// The Target interface that the client expects to use
+class WeatherAPI {
+  constructor(apiKey) {
+    this.apiKey = apiKey;
+  }
+  
+  getWeather(city) {
+    console.log(Getting weather data for ${city}...);
+  }
+}
+
+// The Adaptee for the OpenWeatherMap API
+class OpenWeatherMapAPI {
+  constructor(apiKey) {
+    this.apiKey = apiKey;
+  }
+  
+  getWeatherData(city) {
+    console.log(Getting weather data from OpenWeatherMap API for ${city}...);
+  }
+}
+
+// The Adapter class that adapts the OpenWeatherMapAPI to the WeatherAPI interface
+class OpenWeatherMapAdapter extends WeatherAPI {
+  constructor(apiKey) {
+    super(apiKey);
+    this.openWeatherMapAPI = new OpenWeatherMapAPI(apiKey);
+  }
+  
+  getWeather(city) {
+    this.openWeatherMapAPI.getWeatherData(city);
+  }
+}
+
+// The Adaptee for the Weather Underground API
+class WeatherUndergroundAPI {
+  constructor(apiKey) {
+    this.apiKey = apiKey;
+  }
+  
+  getConditions(city) {
+    console.log(Getting weather conditions from Weather Underground API for ${city}...);
+  }
+}
+
+// The Adapter class that adapts the WeatherUndergroundAPI to the WeatherAPI interface
+class WeatherUndergroundAdapter extends WeatherAPI {
+  constructor(apiKey) {
+    super(apiKey);
+    this.weatherUndergroundAPI = new WeatherUndergroundAPI(apiKey);
+  }
+  
+  getWeather(city) {
+    this.weatherUndergroundAPI.getConditions(city);
+  }
+}
+
+// Usage example
+const openWeatherMapAdapter = new OpenWeatherMapAdapter('openweathermapapikey');
+const weatherUndergroundAdapter = new WeatherUndergroundAdapter('weatherundergroundapikey');
+
+openWeatherMapAdapter.getWeather('New York'); // Output: "Getting weather data from OpenWeatherMap API for New York..."
+weatherUndergroundAdapter.getWeather('London'); // Output: "Getting weather conditions from Weather Underground API for London..."
+```
+In this example, we have two Adaptees (OpenWeatherMapAPI and WeatherUndergroundAPI) that have different interfaces, and two Adapter classes (OpenWeatherMapAdapter and WeatherUndergroundAdapter) that adapt them to the common WeatherAPI interface. The client code can use the WeatherAPI interface to retrieve weather data from either API interchangeably, without worrying about the differences in their interfaces.
+
+
+
+
 
 
 
