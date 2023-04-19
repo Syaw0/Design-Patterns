@@ -76,7 +76,52 @@ In this example, the LibraryFacade class provides a simplified interface for lib
 
 
 
+### Use Case 
 
+```javascript
+// Define the FlightBookingFacade class
+class FlightBookingFacade {
+  private FlightSearch flightSearch;
+  private SeatSelection seatSelection;
+  private Payment payment;
+
+  // Constructor sets up all necessary components
+  public FlightBookingFacade() {
+    this.flightSearch = new FlightSearch();
+    this.seatSelection = new SeatSelection();
+    this.payment = new Payment();
+  }
+
+  // Public methods provide a simplified interface for booking a flight
+  public void bookFlight(String departureCity, String arrivalCity, String departureDate, String returnDate, int numOfPassengers) {
+    // Search for available flights based on user input
+    List<Flight> availableFlights = flightSearch.searchFlights(departureCity, arrivalCity, departureDate, returnDate, numOfPassengers);
+
+    // Display available seat options and allow user to select seats
+    List<Seat> selectedSeats = seatSelection.selectSeats(availableFlights, numOfPassengers);
+
+    // Process payment for the selected seats
+    payment.processPayment(selectedSeats);
+  }
+}
+
+// Define the FlightSearch class (one of the components used by the facade)
+class FlightSearch {
+  // Implementation details...
+}
+
+// Define the SeatSelection class (another component used by the facade)
+class SeatSelection {
+  // Implementation details...
+}
+
+// Define the Payment class (another component used by the facade)
+class Payment {
+  // Implementation details...
+}
+
+```
+In this example, the FlightBookingFacade class provides a simplified interface for booking a flight. The FlightSearch, SeatSelection, and Payment classes are used internally by the facade to handle the complex details of searching for available flights, selecting seats, and processing payment. By using the facade, users can interact with a simplified interface without needing to know about the underlying complexity of how their flight is being booked.
 
 
 
