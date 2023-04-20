@@ -84,3 +84,77 @@ In this example, we have four classes: Shape, Circle, Square, and Triangle, whic
 
 When we create a new Group object and add shapes to it, we can call the draw() method on the group, and it will call the draw() method on all the shapes in the group, including other groups. This way, we can treat individual shapes and groups of shapes in the same way.
 
+
+
+
+### Use Case 
+
+```javascript
+
+// Define a component interface for a company department
+interface Department {
+    public void printDepartmentName();
+}
+
+// Define a leaf class for a single department
+class SingleDepartment implements Department {
+    private String name;
+
+    public SingleDepartment(String name) {
+        this.name = name;
+    }
+
+    public void printDepartmentName() {
+        System.out.println(name);
+    }
+}
+
+// Define a composite class for a group of departments
+class GroupDepartment implements Department {
+    private List<Department> departments = new ArrayList<Department>();
+
+    public void addDepartment(Department department) {
+        departments.add(department);
+    }
+
+    public void printDepartmentName() {
+        for (Department department : departments) {
+            department.printDepartmentName();
+        }
+    }
+}
+
+// Client code for printing department names
+public class DepartmentClient {
+    public static void main(String args) {
+        SingleDepartment sales = new SingleDepartment("Sales");
+        SingleDepartment marketing = new SingleDepartment("Marketing");
+        SingleDepartment engineering = new SingleDepartment("Engineering");
+
+        GroupDepartment company = new GroupDepartment();
+        company.addDepartment(sales);
+        company.addDepartment(marketing);
+
+        GroupDepartment technology = new GroupDepartment();
+        technology.addDepartment(engineering);
+
+        GroupDepartment allDepartments = new GroupDepartment();
+        allDepartments.addDepartment(company);
+        allDepartments.addDepartment(technology);
+
+        allDepartments.printDepartmentName();
+    }
+}
+```
+In this example, the Composite pattern is used to represent a company's department structure as a tree of composite and leaf objects. The Department interface defines the operations that can be performed on both single departments and groups of departments. The SingleDepartment class represents a leaf object that can be printed directly, while the GroupDepartment class represents a composite object that contains other departments. The DepartmentClient class uses the composite structure to print all department names, regardless of whether they are single departments or groups of departments. By using a composite structure, the Composite pattern simplifies the code for working with hierarchical structures and allows leaf and composite objects to be treated uniformly.
+
+
+
+
+
+
+
+
+
+
+
