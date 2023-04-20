@@ -64,3 +64,68 @@ public class Client {
 }
 ```
 In this example, the Flyweight pattern is used to minimize memory usage by sharing objects with similar state. The ConcreteFlyweight class represents a shared object with intrinsic state, while the FlyweightFactory class creates and manages these shared objects. The Client class uses the FlyweightFactory to obtain instances of shared objects and calls their operation method. By reusing shared objects, the Flyweight pattern reduces the number of objects created and saves memory.
+
+
+
+### Use Case
+```javascript
+
+// Define a flyweight interface for a music player
+interface MusicPlayer {
+    public void play(String song);
+}
+
+// Define a concrete flyweight class for playing MP3 files
+class MP3Player implements MusicPlayer {
+    private String fileName;
+
+    public MP3Player(String fileName) {
+        this.fileName = fileName;
+    }
+
+    public void play(String song) {
+        System.out.println("Playing " + fileName + " for " + song);
+    }
+}
+
+// Define a flyweight factory class for creating music players
+class MusicPlayerFactory {
+    private Map<String, MusicPlayer> players = new HashMap<String, MusicPlayer>();
+
+    public MusicPlayer getPlayer(String type) {
+        if (players.containsKey(type)) {
+            return players.get(type);
+        } else {
+            if (type.equals("MP3")) {
+                MusicPlayer player = new MP3Player("mp3file.mp3");
+                players.put(type, player);
+                return player;
+            } else {
+                throw new IllegalArgumentException("Invalid music player type");
+            }
+        }
+    }
+}
+
+// Client code for playing music
+public class MusicClient {
+    public static void main(String args) {
+        MusicPlayerFactory factory = new MusicPlayerFactory();
+
+        MusicPlayer mp3Player1 = factory.getPlayer("MP3");
+        MusicPlayer mp3Player2 = factory.getPlayer("MP3");
+        MusicPlayer mp3Player3 = factory.getPlayer("MP3");
+
+        mp3Player1.play("song1");
+        mp3Player2.play("song2");
+        mp3Player3.play("song3");
+    }
+}
+```
+In this example, the Flyweight pattern is used to minimize memory usage by sharing music player objects with similar state. The MP3Player class represents a shared object with intrinsic state (the file name), while the MusicPlayerFactory class creates and manages these shared objects. The MusicClient class uses the MusicPlayerFactory to obtain instances of shared objects and calls their play method with different songs. By reusing shared objects, the Flyweight pattern reduces the number of objects created and saves memory.
+
+
+
+
+
+
