@@ -13,6 +13,78 @@ Finally, you can create a "remote" class that has methods for controlling the mo
 By using the bridge design pattern, you can create a flexible system where different types of toys can be controlled by the same remote, and new types of toys can be added without needing to change the remote's code.
 
 
+### How Its Work
+
+```javascript
+// Define the Abstraction interface
+interface Abstraction {
+  implementor: Implementor;
+  operation(): void;
+}
+
+// Implement the Refined Abstraction class
+class RefinedAbstraction implements Abstraction {
+  constructor(public implementor: Implementor) {}
+
+  operation() {
+    console.log("RefinedAbstraction: " + this.implementor.operationImp());
+  }
+}
+
+// Define the Implementor interface
+interface Implementor {
+  operationImp(): string;
+}
+
+// Implement the Concrete Implementor A class
+class ConcreteImplementorA implements Implementor {
+  operationImp() {
+    return "ConcreteImplementorA";
+  }
+}
+
+// Implement the Concrete Implementor B class
+class ConcreteImplementorB implements Implementor {
+  operationImp() {
+    return "ConcreteImplementorB";
+  }
+}
+
+// Create an instance of the Refined Abstraction with Concrete Implementor A
+const refinedAbstractionA = new RefinedAbstraction(new ConcreteImplementorA());
+
+// Call the operation method on the Refined Abstraction with Concrete Implementor A
+refinedAbstractionA.operation(); // Output: RefinedAbstraction: ConcreteImplementorA
+
+// Create an instance of the Refined Abstraction with Concrete Implementor B
+const refinedAbstractionB = new RefinedAbstraction(new ConcreteImplementorB());
+
+// Call the operation method on the Refined Abstraction with Concrete Implementor B
+refinedAbstractionB.operation(); // Output: RefinedAbstraction: ConcreteImplementorB
+
+// Explanation:
+// The Bridge Design Pattern is used to separate an abstraction from its implementation so that they can be modified independently.
+// In this example, we have an Abstraction interface and a concrete implementation of it called RefinedAbstraction. The RefinedAbstraction class has a reference to an object that implements the Implementor interface. We have two concrete implementations of the Implementor interface called ConcreteImplementorA and ConcreteImplementorB.
+// We create two instances of the RefinedAbstraction class, one with ConcreteImplementorA and one with ConcreteImplementorB. When we call the operation method on each instance, it calls the operationImp method on the referenced Implementor object and outputs the result. This shows how the abstraction and implementation can be modified independently without affecting each other.
+
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
