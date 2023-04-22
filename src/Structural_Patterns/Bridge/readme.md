@@ -72,6 +72,59 @@ refinedAbstractionB.operation(); // Output: RefinedAbstraction: ConcreteImplemen
 ```
 
 
+### Use Case
+
+
+```javascript
+
+// Define the Abstraction interface
+interface Shape {
+  draw(color: Color): void;
+}
+
+// Implement the Refined Abstraction class
+class Circle implements Shape {
+  constructor(private x: number, private y: number, private radius: number) {}
+
+  draw(color: Color) {
+    console.log("Drawing a circle at (" + this.x + "," + this.y + ") with radius " + this.radius + " and color " + color.fill());
+  }
+}
+
+// Define the Implementor interface
+interface Color {
+  fill(): string;
+}
+
+// Implement the Concrete Implementor A class
+class RedColor implements Color {
+  fill() {
+    return "red";
+  }
+}
+
+// Implement the Concrete Implementor B class
+class BlueColor implements Color {
+  fill() {
+    return "blue";
+  }
+}
+
+// Create an instance of the Refined Abstraction with Concrete Implementor A
+const redCircle = new Circle(100, 100, 50);
+
+// Call the method on the Refined Abstraction with Concrete Implementor A
+redCircle.draw(new RedColor()); // Output: Drawing a circle at (100,100) with radius 50 and color red
+
+// Create an instance of the Refined Abstraction with Concrete Implementor B
+const blueCircle = new Circle(200, 200, 75);
+
+// Call the method on the Refined Abstraction with Concrete Implementor B
+blueCircle.draw(new BlueColor()); // Output: Drawing a circle at (200,200) with radius 75 and color blue
+
+// Explanation:
+// In this example, we have an Abstraction interface called Shape and a concrete implementation of it called Circle. The Circle class has a reference to an object that implements the Color interface. We have two concrete implementations of the Color interface called RedColor and BlueColor.
+// We create two instances of the Circle class, one with RedColor and one with BlueColor. When we call the draw method on each instance, it calls the fill method on the referenced Color object and outputs the result. This shows how the abstraction (Shape) and implementation (Color) can be modified independently without affecting each other. For example, we can easily add new shapes or new colors without changing the existing classes.
 
 
 
@@ -79,8 +132,7 @@ refinedAbstractionB.operation(); // Output: RefinedAbstraction: ConcreteImplemen
 
 
 
-
-
+```
 
 
 
