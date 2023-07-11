@@ -31,46 +31,40 @@ fo === bar // True
 
 ```
 
-
-In this simplified example , the Singleton class has a private static variable named ` instance `to hold the single instance of the class . The constructor of the class is made private to prevent direct instantiation of the class from outside . Instead , a public static method ` getInstance ( ) ` is provided to create and return the single instance of the class if it doesn't exist , or simply return the existing instance if it does .
-
-
+In this simplified example , the Singleton class has a private static variable named `instance`to hold the single instance of the class . The constructor of the class is made private to prevent direct instantiation of the class from outside . Instead , a public static method `getInstance ( )` is provided to create and return the single instance of the class if it doesn't exist , or simply return the existing instance if it does .
 
 ### Use Case
 
-
 Suppose you have a requirement for a Logger class that will log all your application's events to a file or a database . However , you do not want to create multiple instances of the Logger class , as it could lead to multiple entries in the log file or database , causing confusion and ambiguity . In this case , you can use the Singleton pattern to ensure that only one instance of the Logger class is created , and that all events are logged in a single location . Here's the pseudocode for the Logger class that uses the Singleton pattern :
-
 
 ```typescript
 
 class Logger {
  private static Logger instance ;
- private File logFile ; 
+ private File logFile ;
 private Logger ( ) {
- Prevent direct instantiation of the class 
-logFile = new File ( " logfile.txt " ) ; 
-} 
+ Prevent direct instantiation of the class
+logFile = new File ( " logfile.txt " ) ;
+}
 public static Logger getLogger ( ) {
- if ( instance == null ) { 
-instance = new Logger ( ) ; 
-return instance ; } 
-public void log ( String message ) { 
+ if ( instance == null ) {
+instance = new Logger ( ) ;
+return instance ; }
+public void log ( String message ) {
 Write the message to the log file
  logFile.appendLine ( message ) ;
- } } 
-You can use the logger class in your application as follows : 
+ } }
+You can use the logger class in your application as follows :
 Logger logger = Logger.getLogger ( ) ; logger.log ( " Application started " ) Log the event
 
 
 
 ```
 
-
-
-
 ### Examples
 
 [python](https://github.com/Syaw0/Design-Patterns/blob/master/src/Creational_Patterns/Singleton/examples/python/singleton.py)
 
 [typescript](https://github.com/Syaw0/Design-Patterns/blob/master/src/Creational_Patterns/Singleton/examples/typescript/singleton.ts)
+
+[rust](https://github.com/Syaw0/Design-Patterns/blob/master/src/Creational_Patterns/Singleton/examples/rust/singleton.ts)
