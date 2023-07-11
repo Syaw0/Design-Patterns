@@ -63,8 +63,10 @@ Logger logger = Logger.getLogger ( ) ; logger.log ( " Application started " ) Lo
 
 ### Examples
 
-[python](https://github.com/Syaw0/Design-Patterns/blob/master/src/Creational_Patterns/Singleton/examples/python/singleton.py)
+[Python](https://github.com/Syaw0/Design-Patterns/blob/master/src/Creational_Patterns/Singleton/examples/python/singleton.py)
 
-[typescript](https://github.com/Syaw0/Design-Patterns/blob/master/src/Creational_Patterns/Singleton/examples/typescript/singleton.ts)
+[Typescript](https://github.com/Syaw0/Design-Patterns/blob/master/src/Creational_Patterns/Singleton/examples/typescript/singleton.ts)
 
-[rust](https://github.com/Syaw0/Design-Patterns/blob/master/src/Creational_Patterns/Singleton/examples/rust/singleton.ts)
+[Rust](https://github.com/Syaw0/Design-Patterns/blob/master/src/Creational_Patterns/Singleton/examples/rust/singleton.ts)
+
+[Go](https://github.com/Syaw0/Design-Patterns/blob/master/src/Creational_Patterns/Singleton/examples/go/singleton.ts)
