@@ -72,3 +72,7 @@ Logger logger = Logger.getLogger ( ) ; logger.log ( " Application started " ) Lo
 [Go](https://github.com/Syaw0/Design-Patterns/blob/master/src/Creational_Patterns/Singleton/examples/go/singleton.ts)
 
 [Php](https://github.com/Syaw0/Design-Patterns/blob/master/src/Creational_Patterns/Singleton/examples/php/singleton.ts)
+
+[C#](https://github.com/Syaw0/Design-Patterns/blob/master/src/Creational_Patterns/Singleton/examples/c#/singleton.ts)
+
+[C#](https://github.com/Syaw0/Design-Patterns/blob/master/src/Creational_Patterns/Singleton/examples/c#/singleton2.ts)
