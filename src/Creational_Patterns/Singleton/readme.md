@@ -78,3 +78,5 @@ Logger logger = Logger.getLogger ( ) ; logger.log ( " Application started " ) Lo
 [C#](https://github.com/Syaw0/Design-Patterns/blob/master/src/Creational_Patterns/Singleton/examples/c#/singleton2.cs)
 
 [Ruby](https://github.com/Syaw0/Design-Patterns/blob/master/src/Creational_Patterns/Singleton/examples/ruby/singleton.rb)
+
+[Java](https://github.com/Syaw0/Design-Patterns/blob/master/src/Creational_Patterns/Singleton/examples/java/singleton.java)
