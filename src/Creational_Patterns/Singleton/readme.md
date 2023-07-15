@@ -67,12 +67,14 @@ Logger logger = Logger.getLogger ( ) ; logger.log ( " Application started " ) Lo
 
 [Typescript](https://github.com/Syaw0/Design-Patterns/blob/master/src/Creational_Patterns/Singleton/examples/typescript/singleton.ts)
 
-[Rust](https://github.com/Syaw0/Design-Patterns/blob/master/src/Creational_Patterns/Singleton/examples/rust/singleton.ts)
+[Rust](https://github.com/Syaw0/Design-Patterns/blob/master/src/Creational_Patterns/Singleton/examples/rust/singleton.rs)
 
-[Go](https://github.com/Syaw0/Design-Patterns/blob/master/src/Creational_Patterns/Singleton/examples/go/singleton.ts)
+[Go](https://github.com/Syaw0/Design-Patterns/blob/master/src/Creational_Patterns/Singleton/examples/go/singleton.go)
 
-[Php](https://github.com/Syaw0/Design-Patterns/blob/master/src/Creational_Patterns/Singleton/examples/php/singleton.ts)
+[Php](https://github.com/Syaw0/Design-Patterns/blob/master/src/Creational_Patterns/Singleton/examples/php/singleton.php)
 
-[C#](https://github.com/Syaw0/Design-Patterns/blob/master/src/Creational_Patterns/Singleton/examples/c#/singleton.ts)
+[C#](https://github.com/Syaw0/Design-Patterns/blob/master/src/Creational_Patterns/Singleton/examples/c#/singleton.cs)
 
-[C#](https://github.com/Syaw0/Design-Patterns/blob/master/src/Creational_Patterns/Singleton/examples/c#/singleton2.ts)
+[C#](https://github.com/Syaw0/Design-Patterns/blob/master/src/Creational_Patterns/Singleton/examples/c#/singleton2.cs)
+
+[Ruby](https://github.com/Syaw0/Design-Patterns/blob/master/src/Creational_Patterns/Singleton/examples/ruby/singleton.rb)
