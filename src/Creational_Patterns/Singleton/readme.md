@@ -82,3 +82,5 @@ Logger logger = Logger.getLogger ( ) ; logger.log ( " Application started " ) Lo
 [Java](https://github.com/Syaw0/Design-Patterns/blob/master/src/Creational_Patterns/Singleton/examples/java/singleton.java)
 
 [C++](https://github.com/Syaw0/Design-Patterns/blob/master/src/Creational_Patterns/Singleton/examples/c%2B%2B/singleton.cpp)
+
+[C](https://github.com/Syaw0/Design-Patterns/blob/master/src/Creational_Patterns/Singleton/examples/c/singleton.c)
