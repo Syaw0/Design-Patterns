@@ -86,3 +86,5 @@ Logger logger = Logger.getLogger ( ) ; logger.log ( " Application started " ) Lo
 [C](https://github.com/Syaw0/Design-Patterns/blob/master/src/Creational_Patterns/Singleton/examples/c/singleton.c)
 
 [Kotlin](https://github.com/Syaw0/Design-Patterns/blob/master/src/Creational_Patterns/Singleton/examples/kotlin/singleton.kt)
+
+[Swift](https://github.com/Syaw0/Design-Patterns/blob/master/src/Creational_Patterns/Singleton/examples/swift/singleton.swift)
