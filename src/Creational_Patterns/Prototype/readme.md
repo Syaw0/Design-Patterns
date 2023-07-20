@@ -9,3 +9,5 @@
 [Rust](https://github.com/Syaw0/Design-Patterns/blob/master/src/Creational_Patterns/Prototype/examples/rust/prototype.rs)
 
 [Go](https://github.com/Syaw0/Design-Patterns/blob/master/src/Creational_Patterns/Prototype/examples/go/prototype.go)
+
+[Php](https://github.com/Syaw0/Design-Patterns/blob/master/src/Creational_Patterns/Prototype/examples/php/prototype.php)
